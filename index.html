@@ -6,7 +6,7 @@
   <title>The Overflow Drop</title>
 
   <!-- EB Garamond Font -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet" />
 
   <style>
     html, body {
@@ -20,10 +20,30 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       text-align: center;
       box-sizing: border-box;
       position: relative;
-      flex-direction: column;
+    }
+
+    #playButton {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid white;
+      padding: 0.7em 1.4em;
+      border-radius: 5px;
+      font-family: 'EB Garamond', serif;
+      font-size: 1em;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      z-index: 2;
+      margin-bottom: 1em;
+      transition: opacity 0.5s ease;
+    }
+
+    #playButton.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
 
     .overlay {
@@ -44,33 +64,6 @@
       to {
         opacity: 1;
       }
-    }
-
-    #playButton {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
-      border: 1px solid white;
-      padding: 0.7em 1.4em;
-      border-radius: 5px;
-      font-family: 'EB Garamond', serif;
-      font-size: 1em;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-      z-index: 1000;
-      transition: opacity 0.5s ease;
-    }
-
-    #playButton:focus {
-      outline: 2px solid white;
-    }
-
-    #playButton.hidden {
-      opacity: 0;
-      pointer-events: none;
     }
 
     audio {
@@ -109,8 +102,7 @@
     const verses = document.querySelectorAll(".verse");
 
     playButton.addEventListener("click", () => {
-      audio.play();
-
+      audio.play().catch(() => alert("Please tap again to allow audio to play."));
       playButton.classList.add("hidden");
       overlay.style.opacity = 1;
 
