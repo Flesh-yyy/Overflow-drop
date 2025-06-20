@@ -32,7 +32,7 @@
       border-radius: 10px;
       max-width: 700px;
       width: 90%;
-      margin-bottom: 4em; /* add space for the audio player */
+      margin-bottom: 4em;
     }
 
     h1 {
@@ -43,17 +43,34 @@
       margin: 1em 0;
     }
 
-    .audio-container {
-  position: fixed;
-  bottom: 1em;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
+    .custom-audio {
+      position: fixed;
+      bottom: 1.5em;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+    }
+
+    #playBtn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid white;
+      color: white;
+      font-family: 'EB Garamond', serif;
+      font-size: 1em;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    #playBtn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    audio {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -67,11 +84,27 @@
     <p>Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the Lord for ever.</p>
   </div>
 
-  <div class="audio-container">
-    <audio controls>
+  <div class="custom-audio">
+    <button id="playBtn">Play</button>
+    <audio id="audio">
       <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
     </audio>
   </div>
+
+  <script>
+    const audio = document.getElementById("audio");
+    const playBtn = document.getElementById("playBtn");
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.textContent = "Pause";
+      } else {
+        audio.pause();
+        playBtn.textContent = "Play";
+      }
+    });
+  </script>
 </body>
 </html>
