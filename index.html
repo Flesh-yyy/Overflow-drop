@@ -23,6 +23,7 @@
       text-align: center;
       padding: 2em;
       box-sizing: border-box;
+      position: relative;
     }
 
     .overlay {
@@ -51,6 +52,26 @@
       }
     }
 
+    #playButton {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid white;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9em;
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+    }
+
+    #playButton:focus {
+      outline: 2px solid white;
+    }
+
     audio {
       display: none;
     }
@@ -61,8 +82,10 @@
   </style>
 </head>
 <body>
-  <audio autoplay>
-    <source src="FOR QR CODE FAITH ANOINTING DROP.mp3" type="audio/mpeg" />
+  <button id="playButton">Tap to Begin</button>
+
+  <audio id="psalmAudio">
+    <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
   </audio>
 
   <div class="overlay">
@@ -77,5 +100,15 @@
     <p class="verse">Surely goodness and mercy shall follow me all the days of my life:  
        and I will dwell in the house of the Lord for ever.</p>
   </div>
+
+  <script>
+    const playButton = document.getElementById("playButton");
+    const audio = document.getElementById("psalmAudio");
+
+    playButton.addEventListener("click", () => {
+      audio.play();
+      playButton.style.display = "none";
+    });
+  </script>
 </body>
 </html>
