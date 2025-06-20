@@ -32,7 +32,7 @@
       border-radius: 10px;
       max-width: 700px;
       width: 90%;
-      margin-bottom: 2em;
+      margin-bottom: 4em; /* add space for the audio player */
     }
 
     h1 {
@@ -43,8 +43,15 @@
       margin: 1em 0;
     }
 
-    audio {
-      margin-top: 1em;
+    .audio-container {
+      position: fixed;
+      bottom: 1em;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 0.5em;
+      border-radius: 8px;
     }
   </style>
 </head>
@@ -59,9 +66,11 @@
     <p>Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the Lord for ever.</p>
   </div>
 
-  <audio controls>
-    <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
+  <div class="audio-container">
+    <audio controls>
+      <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 </body>
 </html>
