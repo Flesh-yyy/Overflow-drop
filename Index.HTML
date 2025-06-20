@@ -1,51 +1,67 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Overflow Drop</title>
+
+  <!-- EB Garamond Font -->
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background: #f5faff;
-      color: #333;
-      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: url('your-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'EB Garamond', serif;
+      color: white;
       text-align: center;
-      padding: 5em 1em;
+      padding: 4em 1em;
+      line-height: 1.6;
+      backdrop-filter: brightness(0.9);
     }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 2em;
+      border-radius: 10px;
+      max-width: 700px;
+      margin: auto;
+    }
+
     h1 {
-      font-size: 1.5em;
-      color: #2a4d69;
+      font-size: 2em;
+      margin-bottom: 1em;
     }
+
     p {
-      font-size: 1.1em;
-      margin-top: 1em;
+      font-size: 1.2em;
+      margin: 0.5em 0;
     }
+
     audio {
-      margin-top: 2em;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <h1>“Thou anointest my head with oil; my cup runneth over.”</h1>
-  <p>Psalm 23:5</p>
-  <p><em>Scan to hear the Shepherd.</em></p>
-  <audio controls autoplay>
-    <source src="FOR QR CODE FAITH ANOINTING DROP.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
+  <!-- Autoplayed hidden audio -->
+  <audio autoplay>
+    <source src="your-audio-file.mp3" type="audio/mpeg" />
   </audio>
+
+  <div class="overlay">
+    <h1>Psalm 23 (KJV)</h1>
+    <p>The Lord is my shepherd; I shall not want.</p>
+    <p>He maketh me to lie down in green pastures: he leadeth me beside the still waters.</p>
+    <p>He restoreth my soul: he leadeth me in the paths of righteousness for his name’s sake.</p>
+    <p>Yea, though I walk through the valley of the shadow of death, I will fear no evil:  
+       for thou art with me; thy rod and thy staff they comfort me.</p>
+    <p>Thou preparest a table before me in the presence of mine enemies:  
+       thou anointest my head with oil; my cup runneth over.</p>
+    <p>Surely goodness and mercy shall follow me all the days of my life:  
+       and I will dwell in the house of the Lord for ever.</p>
+  </div>
 </body>
 </html>
-```
-<div style="margin-top: 2em; text-align: left; max-width: 600px;">
-  <h2 style="text-align: center;">Psalm 23 (KJV)</h2>
-  <p>The Lord is my shepherd; I shall not want.</p>
-  <p>He maketh me to lie down in green pastures: he leadeth me beside the still waters.</p>
-  <p>He restoreth my soul: he leadeth me in the paths of righteousness for his name’s sake.</p>
-  <p>Yea, though I walk through the valley of the shadow of death, I will fear no evil: 
-     for thou art with me; thy rod and thy staff they comfort me.</p>
-  <p>Thou preparest a table before me in the presence of mine enemies: 
-     thou anointest my head with oil; my cup runneth over.</p>
-  <p>Surely goodness and mercy shall follow me all the days of my life: 
-     and I will dwell in the house of the Lord for ever.</p>
-</div>
