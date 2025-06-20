@@ -23,27 +23,15 @@
       flex-direction: column;
       text-align: center;
       box-sizing: border-box;
+      padding: 2em;
       position: relative;
     }
 
-    #playButton {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
-      border: 1px solid white;
-      padding: 0.7em 1.4em;
-      border-radius: 5px;
-      font-family: 'EB Garamond', serif;
-      font-size: 1em;
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-      z-index: 2;
-      margin-bottom: 1em;
-      transition: opacity 0.5s ease;
-    }
-
-    #playButton.hidden {
-      opacity: 0;
-      pointer-events: none;
+    audio {
+      position: absolute;
+      top: 1em;
+      left: 1em;
+      z-index: 1000;
     }
 
     .overlay {
@@ -52,64 +40,31 @@
       border-radius: 10px;
       max-width: 700px;
       width: 90%;
-      opacity: 0;
-    }
-
-    .verse {
-      opacity: 0;
-      animation: fadeIn 6s ease-in forwards;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    audio {
-      display: none;
     }
 
     h1 {
       margin-bottom: 1em;
     }
+
+    p {
+      margin: 1em 0;
+    }
   </style>
 </head>
 <body>
-  <button id="playButton">Tap to Begin</button>
-
-  <audio id="psalmAudio">
+  <audio controls>
     <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
   </audio>
 
-  <div class="overlay" id="overlay">
+  <div class="overlay">
     <h1>Psalm 23 (KJV)</h1>
-    <p class="verse">The Lord is my shepherd; I shall not want.</p>
-    <p class="verse">He maketh me to lie down in green pastures: he leadeth me beside the still waters.</p>
-    <p class="verse">He restoreth my soul: he leadeth me in the paths of righteousness for his name’s sake.</p>
-    <p class="verse">Yea, though I walk through the valley of the shadow of death, I will fear no evil:  
-       for thou art with me; thy rod and thy staff they comfort me.</p>
-    <p class="verse">Thou preparest a table before me in the presence of mine enemies:  
-       thou anointest my head with oil; my cup runneth over.</p>
-    <p class="verse">Surely goodness and mercy shall follow me all the days of my life:  
-       and I will dwell in the house of the Lord for ever.</p>
+    <p>The Lord is my shepherd; I shall not want.</p>
+    <p>He maketh me to lie down in green pastures: he leadeth me beside the still waters.</p>
+    <p>He restoreth my soul: he leadeth me in the paths of righteousness for his name’s sake.</p>
+    <p>Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.</p>
+    <p>Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.</p>
+    <p>Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the Lord for ever.</p>
   </div>
-
-  <script>
-    const playButton = document.getElementById("playButton");
-    const audio = document.getElementById("psalmAudio");
-    const overlay = document.getElementById("overlay");
-    const verses = document.querySelectorAll(".verse");
-
-    playButton.addEventListener("click", () => {
-      audio.play().catch(() => alert("Please tap again to allow audio to play."));
-      playButton.classList.add("hidden");
-      overlay.style.opacity = 1;
-
-      verses.forEach((verse, index) => {
-        verse.style.animationDelay = `${index * 8}s`;
-      });
-    });
-  </script>
 </body>
 </html>
