@@ -9,17 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
 
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
       background: url('IMG_9388.png') no-repeat center center fixed;
       background-size: cover;
       font-family: 'EB Garamond', serif;
       color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 4em 1em;
-      line-height: 1.6;
-      backdrop-filter: brightness(0.9);
+      padding: 2em;
+      box-sizing: border-box;
     }
 
     .overlay {
@@ -27,40 +30,51 @@
       padding: 2em;
       border-radius: 10px;
       max-width: 700px;
-      margin: auto;
+      width: 100%;
     }
 
-    h1 {
-      font-size: 2em;
-      margin-bottom: 1em;
+    .verse {
+      opacity: 0;
+      animation: fadeIn 6s ease-in forwards;
     }
 
-    p {
-      font-size: 1.2em;
-      margin: 0.5em 0;
+    .verse:nth-of-type(1) { animation-delay: 0s; }
+    .verse:nth-of-type(2) { animation-delay: 6s; }
+    .verse:nth-of-type(3) { animation-delay: 12s; }
+    .verse:nth-of-type(4) { animation-delay: 20s; }
+    .verse:nth-of-type(5) { animation-delay: 30s; }
+    .verse:nth-of-type(6) { animation-delay: 40s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     audio {
       display: none;
     }
+
+    h1 {
+      margin-bottom: 1em;
+    }
   </style>
 </head>
 <body>
-  <!-- Autoplayed hidden audio -->
   <audio autoplay>
     <source src="FOR QR CODE FAITH ANOINTING DROP.mp3" type="audio/mpeg" />
   </audio>
 
   <div class="overlay">
     <h1>Psalm 23 (KJV)</h1>
-    <p>The Lord is my shepherd; I shall not want.</p>
-    <p>He maketh me to lie down in green pastures: he leadeth me beside the still waters.</p>
-    <p>He restoreth my soul: he leadeth me in the paths of righteousness for his name’s sake.</p>
-    <p>Yea, though I walk through the valley of the shadow of death, I will fear no evil:  
+    <p class="verse">The Lord is my shepherd; I shall not want.</p>
+    <p class="verse">He maketh me to lie down in green pastures: he leadeth me beside the still waters.</p>
+    <p class="verse">He restoreth my soul: he leadeth me in the paths of righteousness for his name’s sake.</p>
+    <p class="verse">Yea, though I walk through the valley of the shadow of death, I will fear no evil:  
        for thou art with me; thy rod and thy staff they comfort me.</p>
-    <p>Thou preparest a table before me in the presence of mine enemies:  
+    <p class="verse">Thou preparest a table before me in the presence of mine enemies:  
        thou anointest my head with oil; my cup runneth over.</p>
-    <p>Surely goodness and mercy shall follow me all the days of my life:  
+    <p class="verse">Surely goodness and mercy shall follow me all the days of my life:  
        and I will dwell in the house of the Lord for ever.</p>
   </div>
 </body>
