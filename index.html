@@ -18,20 +18,12 @@
       font-family: 'EB Garamond', serif;
       color: white;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
       text-align: center;
       box-sizing: border-box;
       padding: 2em;
-      position: relative;
-    }
-
-    audio {
-      position: absolute;
-      top: 1em;
-      left: 1em;
-      z-index: 1000;
     }
 
     .overlay {
@@ -40,6 +32,7 @@
       border-radius: 10px;
       max-width: 700px;
       width: 90%;
+      margin-bottom: 2em;
     }
 
     h1 {
@@ -49,14 +42,13 @@
     p {
       margin: 1em 0;
     }
+
+    audio {
+      margin-top: 1em;
+    }
   </style>
 </head>
 <body>
-  <audio controls>
-    <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-
   <div class="overlay">
     <h1>Psalm 23 (KJV)</h1>
     <p>The Lord is my shepherd; I shall not want.</p>
@@ -66,5 +58,10 @@
     <p>Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over.</p>
     <p>Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of the Lord for ever.</p>
   </div>
+
+  <audio controls>
+    <source src="faith-anointing-drop.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
 </body>
 </html>
